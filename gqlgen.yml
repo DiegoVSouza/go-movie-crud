@@ -1,0 +1,36 @@
+# Onde estão os arquivos do schema? Pode usar glob se quiser.
+schema:
+  - internal/infra/graph/*.graphqls
+
+# Código gerado do servidor (execução)
+exec:
+  filename: internal/infra/graph/generated.go
+  package: graph
+
+# Onde os modelos vão ser gerados
+model:
+  filename: internal/infra/graph/model/models_gen.go
+  package: model
+
+# Onde vão os resolvers gerados automaticamente (se for o caso)
+resolver:
+  layout: follow-schema
+  dir: internal/infra/graph
+  package: graph
+
+# Autobind (se for necessário)
+autobind: []
+
+# Modelos customizados (caso precise)
+models:
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.ID
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  Int:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32

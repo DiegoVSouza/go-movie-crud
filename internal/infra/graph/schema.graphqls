@@ -1,0 +1,21 @@
+type Movie {
+    id: String!
+    title: String!
+    director: String!
+    writer: String!
+    link: String!
+    duration: Float!
+}
+
+input MovieInput {
+    id: String!
+    title: String!
+    director: String!
+    writer: String!
+    link: String!
+    duration: Float!
+}
+
+type Mutation {
+    createMovie(input: MovieInput): Movie
+}
